@@ -6,8 +6,14 @@ function App() {
   const [room, setRoom] = useState({});
   const [message, setMessage] = useState({});
   const [typing, setTyping] = useState({});
+  const [sideBarOpen, setSideBarOpen] = useState("false");
+  const [userListOpen, setUserListOpen] = useState({});
 
   useEffect(() => {}, []);
+
+  const joinRoom = (room) => {
+    setRoom(room);
+  };
 
   return <div className="App"></div>;
 }
