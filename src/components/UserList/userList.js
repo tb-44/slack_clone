@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./index.module.css";
+import style from "./userList.css";
 
 export const UserList = ({ room, current, createConvo, removeUser }) => (
   <ul className={style.component}>
