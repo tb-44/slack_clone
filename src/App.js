@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 
 import { CreateMessageForm } from "./components/CreateMessageForm";
+import { UserHeader } from "./components/UserHeader";
+import { UserList } from "./components/UserList";
 
 class App extends Component {
   state = {
@@ -228,3 +230,5 @@ class App extends Component {
     );
   }
 }
+
+export default App;
