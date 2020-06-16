@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import { CreateMessageForm } from "./components/CreateMessageForm";
-import { UserHeader } from "./components/UserHeader";
-import { UserList } from "./components/UserList";
+import { CreateMessageForm } from "./components/CreateMessageForm/createMessageForm";
+import { UserHeader } from "./components/UserHeader/userHeader";
+import { UserList } from "./components/UserList/userList";
+import { RoomHeader } from "./components/RoomHeader/roomHeader";
 
 class App extends Component {
   state = {
