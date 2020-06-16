@@ -5,6 +5,7 @@ import { CreateMessageForm } from "./components/CreateMessageForm/createMessageF
 import { UserHeader } from "./components/UserHeader/userHeader";
 import { UserList } from "./components/UserList/userList";
 import { RoomHeader } from "./components/RoomHeader/roomHeader";
+import { TypingIndicator } from "./components/TypingIndicator/typingIndicator";
 
 class App extends Component {
   state = {
