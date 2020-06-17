@@ -6,6 +6,7 @@ import { UserHeader } from "./components/UserHeader/userHeader";
 import { UserList } from "./components/UserList/userList";
 import { RoomHeader } from "./components/RoomHeader/roomHeader";
 import { TypingIndicator } from "./components/TypingIndicator/typingIndicator";
+import { RoomList } from "./components/RoomList/roomList";
 
 class App extends Component {
   state = {
