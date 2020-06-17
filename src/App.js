@@ -9,6 +9,7 @@ import { TypingIndicator } from "./components/TypingIndicator/typingIndicator";
 import { RoomList } from "./components/RoomList/roomList";
 import { CreateRoomForm } from "./components/CreateRoomForm/createRoomForm";
 import { MessageList } from "./components/MessageList/messageList";
+import { JoinRoomScreen } from "./components/JoinRoomScreen/joinRoomScreen";
 
 class App extends Component {
   state = {
