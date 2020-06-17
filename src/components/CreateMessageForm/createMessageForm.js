@@ -1,6 +1,6 @@
 import React from "react";
-import style from "./index.module.css";
-import { FileInput } from "../FileInput";
+import style from "./createMessageForm.css";
+import { FileInput } from "../FileInput/fileInput";
 
 export const CreateMessageForm = ({
   state: { user = {}, room = {}, message = "" },

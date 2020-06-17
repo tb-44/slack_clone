@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./index.module.css";
+import style from "./message.css";
 import Linkify from "react-linkify";
 
 const time = (string) => {

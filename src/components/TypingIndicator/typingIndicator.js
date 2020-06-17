@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./index.module.css";
+import style from "./typingIndicator.css";
 
 const dots = (
   <div className={style.dots}>

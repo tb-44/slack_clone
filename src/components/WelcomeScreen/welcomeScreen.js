@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./joinRoomScreen.css";
+import style from "./welcomeScreen.css";
 
-export const JoinRoomScreen = () => (
+export const WelcomeScreen = () => (
   <section>
     <div className={style.component}>
       <span role="img" aria-label="post">
@@ -14,8 +14,9 @@ export const JoinRoomScreen = () => (
         </svg>
       </span>
       <p>
-        Join a room, create a room or click on a user avatar and start a
-        conversation.
+        Authenticating, subscribing to rooms
+        <br />
+        and fetching messages.
       </p>
     </div>
   </section>

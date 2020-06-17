@@ -10,6 +10,7 @@ import { RoomList } from "./components/RoomList/roomList";
 import { CreateRoomForm } from "./components/CreateRoomForm/createRoomForm";
 import { MessageList } from "./components/MessageList/messageList";
 import { JoinRoomScreen } from "./components/JoinRoomScreen/joinRoomScreen";
+import { WelcomeScreen } from "./components/WelcomeScreen/welcomeScreen";
 
 class App extends Component {
   state = {

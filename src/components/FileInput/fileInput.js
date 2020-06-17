@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./fileInput.css";
+import style from "./fileinput.css";
 
 export const FileInput = ({ state: { user, message, room } }) =>
   room.id ? (

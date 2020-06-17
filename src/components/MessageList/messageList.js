@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./messageList.css";
-import { Message } from "../Message";
+import { Message } from "../Message/message";
 
 const emptyList = (
   <div className={style.empty}>

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./index.module.css";
+import style from "./roomList.css";
 import { dots } from "../TypingIndicator/typingIndicator.css";
 
 const Icon = (id) => (
