@@ -8,6 +8,7 @@ import { RoomHeader } from "./components/RoomHeader/roomHeader";
 import { TypingIndicator } from "./components/TypingIndicator/typingIndicator";
 import { RoomList } from "./components/RoomList/roomList";
 import { CreateRoomForm } from "./components/CreateRoomForm/createRoomForm";
+import { MessageList } from "./components/MessageList/messageList";
 
 class App extends Component {
   state = {
