@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import ReactDOM from "react-dom";
+import { version } from "../package.json";
 
 import { CreateMessageForm } from "./components/CreateMessageForm/createMessageForm";
 import { UserHeader } from "./components/UserHeader/userHeader";
@@ -11,6 +13,7 @@ import { CreateRoomForm } from "./components/CreateRoomForm/createRoomForm";
 import { MessageList } from "./components/MessageList/messageList";
 import { JoinRoomScreen } from "./components/JoinRoomScreen/joinRoomScreen";
 import { WelcomeScreen } from "./components/WelcomeScreen/welcomeScreen";
+import ChatManager from "./chatkit";
 
 class App extends Component {
   state = {
@@ -178,7 +181,22 @@ class App extends Component {
     },
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    "Notification" in window && Notification.requestPermission();
+    existingUser
+      ? ChatManager(this, JSON.parse(existingUser))
+      : fetch("https://chatkit-demo-server.herokuapp.com/auth", {
+          method: "POST",
+          body: JSON.stringify({ code: authCode }),
+        })
+          .then((res) => res.json())
+          .then((user) => {
+            user.version = version;
+            window.localStorage.setItem("chatkit-user", JSON.stringify(user));
+            window.history.replaceState(null, null, window.location.pathname);
+            ChatManager(this, user);
+          });
+  }
 
   render() {
     const {
@@ -239,3 +257,26 @@ class App extends Component {
 }
 
 export default App;
+
+window.localStorage.getItem("chatkit-user") &&
+  !window.localStorage.getItem("chatkit-user").match(version) &&
+  window.localStorage.clear();
+
+const params = new URLSearchParams(window.location.search.slice(1));
+const authCode = params.get("code");
+const existingUser = window.localStorage.getItem("chatkit-user");
+
+const githubAuthRedirect = () => {
+  const client = "20cdd317000f92af12fe";
+  const url = "https://github.com/login/oauth/authorize";
+  const server = "https://chatkit-demo-server.herokuapp.com";
+  const redirect = `${server}/success?url=${
+    window.location.href.split("?")[0]
+  }`;
+  window.location = `${url}?scope=user:email&client_id=${client}&redirect_uri=${redirect}`;
+};
+
+!existingUser && !authCode
+  ? githubAuthRedirect()
+  : // eslint-disable-next-line no-undef
+    ReactDOM.render(<App />, document.querySelector("#root"));
