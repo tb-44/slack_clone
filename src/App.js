@@ -278,5 +278,4 @@ const githubAuthRedirect = () => {
 
 !existingUser && !authCode
   ? githubAuthRedirect()
-  : // eslint-disable-next-line no-undef
-    ReactDOM.render(<App />, document.querySelector("#root"));
+  : ReactDOM.render(<App />, document.querySelector("#root"));
